@@ -1,0 +1,19 @@
+{
+  "name": "virtualize",
+  "version": "0.0.1",
+  "repository": "segmentio/virtualize",
+  "description": "Create virtual DOM tree",
+  "main": "index.js",
+  "devDependencies": {
+    "bump": "git://github.com/ianstormtaylor/bump.git#0.4.2",
+    "duo-test": "^0.3.10",
+    "jshint": "~2.5.11",
+    "zuul": "~1.16.4",
+    "browserify": "^8.1.1",
+    "mochify": "^2.1.1"
+  },
+  "dependencies": {
+    "component-type": "^1.1.0",
+    "get-uid": "^1.0.1"
+  }
+}
