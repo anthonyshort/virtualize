@@ -66,4 +66,15 @@ distclean: clean
 	@-rm -rf node_modules
 .PHONY: distclean
 
+#
+# Releases.
+#
 
+release: clean
+	bump $$VERSION && \
+	git changelog --tag $$VERSION && \
+	git commit --all -m "Release $$VERSION" && \
+	git tag $$VERSION && \
+	git push origin master --tags && \
+	npm publish
+.PHONY: release
