@@ -1,6 +1,6 @@
 {
   "name": "virtualize",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": "anthonyshort/virtualize",
   "description": "Create virtual DOM tree",
   "main": "index.js",
