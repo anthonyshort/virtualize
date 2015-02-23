@@ -76,6 +76,12 @@ describe('Virtual Node', function(){
     assert(node.children[0].tagName === 'span');
   });
 
+  it('should allow a single DOM node as a child', function () {
+    var node = dom('div', null, dom('span'));
+    assert(node.children[0].type === 'element');
+    assert(node.children[0].tagName === 'span');
+  });
+
   it('should allow children as rest params', function () {
     var node = dom('div', { foo: 'bar' }, 'one', 'two', 'three', 'four');
     assert.equal(node.children.length, 4);

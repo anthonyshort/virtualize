@@ -41,7 +41,7 @@ function dom(type, props, children) {
 
   // Account for JSX putting the children as multiple arguments.
   // This is essentially just the ES6 rest param
-  if (arguments.length > 2) {
+  if (arguments.length > 2 && Array.isArray(arguments[2]) === false) {
     children = slice(arguments, 2);
   }
 
@@ -101,13 +101,13 @@ function notEmpty(value) {
  * @return {Array}
  */
 
-function flatten(arr, node) {
+function flatten(result, node) {
   if (Array.isArray(node)) {
-    arr = arr.concat(node);
+    result = result.concat(node);
   } else {
-    arr.push(node);
+    result.push(node);
   }
-  return arr;
+  return result;
 }
 
 /**
