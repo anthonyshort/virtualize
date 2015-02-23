@@ -76,6 +76,16 @@ describe('Virtual Node', function(){
     assert(node.children[0].tagName === 'span');
   });
 
+  it('should allow children as rest params', function () {
+    var node = dom('div', { foo: 'bar' }, 'one', 'two', 'three', 'four');
+    assert.equal(node.children.length, 4);
+  });
+
+  it('should allow children as rest params with no attrs', function () {
+    var node = dom('div', null, 'one', 'two', 'three', 'four');
+    assert.equal(node.children.length, 4);
+  });
+
   it('should store events', function () {
     var node = dom('div', { onClick: click });
     function click() {};

@@ -7,6 +7,7 @@ var ComponentNode = require('./lib/component');
 var ElementNode = require('./lib/element');
 var TextNode = require('./lib/text');
 var tree = require('./lib/tree');
+var slice = require('sliced');
 var uid = require('get-uid');
 
 /**
@@ -36,6 +37,12 @@ function dom(type, props, children) {
   if (arguments.length === 2 && (typeof props === 'string' || Array.isArray(props))) {
     children = props;
     props = {};
+  }
+
+  // Account for JSX putting the children as multiple arguments.
+  // This is essentially just the ES6 rest param
+  if (arguments.length > 2) {
+    children = slice(arguments, 2);
   }
 
   children = children || [];

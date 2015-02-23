@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "component-type": "^1.1.0",
-    "get-uid": "^1.0.1"
+    "get-uid": "^1.0.1",
+    "sliced": "0.0.5"
   }
 }
